@@ -115,7 +115,34 @@ const check = () => {
 <button onclick={check} />
 ```
 
+### 組み合わせて使う
 
+これらのテクニックを組み合わせることで、表示差分を簡単に実装できます。
+
+```
+└── Component_A
+    ├── Component_inu
+    └── Component_neko
+```
+
+```js
+const animals = () => {
+    if (true) {
+        return <ComponentInu />;
+    } else {
+        return <ComponentNeko />;
+    }
+}
+
+...
+
+return (
+    <div>
+        <h1>動物</h1>
+        {animals} // 差分のある部分だけを分岐にかける
+    </div>
+);
+```
 
 ## 拡張方法
 
