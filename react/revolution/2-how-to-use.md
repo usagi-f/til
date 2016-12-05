@@ -39,6 +39,8 @@
 
 ## スケールアウトしていくには
 
+### コンポーネントの分割
+
 １つのコンポーネントが持つ役割が増えた場合は、別のコンポーネントに切り分けてあげるのが、スケールアウトのコツです。
 
 一般的に、サービスが大きくなってきた際の方法として以下のようなものがあります。
@@ -65,15 +67,55 @@
 - 「A/B」を**Container Components**（箱コンポーネント）
 - 「inu/neko、apple/orange」を**Presentational Components**（表現コンポーネント）
 
-### Container Components
+#### Container Components
 
 stateを持ちます。
 子コンポーネントに対して、propsを渡してあげるという役目だけを持ちます。
 
-### Presentational Components
+#### Presentational Components
 
 （基本的には）stateを持ちません。
 受け取ったpropsに応じてどういう表示をするかという役目だけを持ちます。
+
+### イベントの追加
+
+Reactは結局はすべて通常のJavaScriptです。
+
+そのためイベントを追加したり、各種分岐を挟みたい場合などは、すべて普通にJavaScriptで記述をしていきます。
+
+```js
+const handleFoo = () => {
+    // イベント
+};
+
+...
+
+<button onclick={handleFoo} />
+```
+↓
+```js
+const handleFoo = () => {
+    // イベント
+};
+const handleBar = () => { // 普通に新しい関数をつくる
+    // イベント
+};
+
+const check = () => {
+    // 普通にif文などを使って分岐をする
+    if (true) {
+        return handleFoo;
+    } else {
+        return handleBar;
+    }
+}
+
+...
+
+<button onclick={check} />
+```
+
+
 
 ## 拡張方法
 
