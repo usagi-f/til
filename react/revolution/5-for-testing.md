@@ -124,3 +124,7 @@ it('Propsのテスト', () => {
 - 依存性を無くす
 
 「テストコードが簡単に書けない」＝「そのコンポーネントは複雑」＝「リファクタリング対象」
+
+---
+
+＜ [4-for-redux](https://github.com/usagi-f/til/blob/master/react/revolution/4-for-redux.md)｜[6-extra](https://github.com/usagi-f/til/blob/master/react/revolution/6-extra.md) ＞

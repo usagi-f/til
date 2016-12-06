@@ -109,3 +109,7 @@ Flux実装の特徴としてあった「データの一方通行化」を活用�
 - 更新のたびにStoreをストレージに保存
 
 他にも各種処理を見やすく書くためにMiddlewareでいい感じにごにょごにょしてくれるものなど、便利なものが多いです。
+
+---
+
+＜ [3-comparison-to-other-framework](https://github.com/usagi-f/til/blob/master/react/revolution/3-comparison-to-other-framework.md)｜[5-for-testing](https://github.com/usagi-f/til/blob/master/react/revolution/5-for-testing.md) ＞

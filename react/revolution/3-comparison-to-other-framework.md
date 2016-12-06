@@ -71,3 +71,7 @@ Reactはあくまでも**Viewを構築するためのライブラリ**です。
 また、Reactの宣言的な更新フローに直接的に関与しなければ、jQueryの併用も可能なはず、です。
 
 オススメはしない。
+
+---
+
+＜ [2-how-to-use](https://github.com/usagi-f/til/blob/master/react/revolution/2-how-to-use.md)｜[4-for-redux](https://github.com/usagi-f/til/blob/master/react/revolution/4-for-redux.md) ＞

@@ -96,3 +96,7 @@ const props ={
 
 <Component {...props} />
 ```
+
+---
+
+＜ [5-for-testing](https://github.com/usagi-f/til/blob/master/react/revolution/5-for-testing.md)

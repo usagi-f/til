@@ -218,3 +218,7 @@ return (
     />
 );
 ```
+
+---
+
+＜ [1-foundation](https://github.com/usagi-f/til/blob/master/react/revolution/1-foundation.md)｜[3-comparison-to-other-framework](https://github.com/usagi-f/til/blob/master/react/revolution/3-comparison-to-other-framework.md) ＞

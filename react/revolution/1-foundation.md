@@ -110,3 +110,6 @@ var dom = (
     </div>
 );
 ```
+
+---
+[2-how-to-use](https://github.com/usagi-f/til/blob/master/react/revolution/2-how-to-use.md) ＞
