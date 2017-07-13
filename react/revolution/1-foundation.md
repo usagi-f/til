@@ -91,19 +91,19 @@ JSXは**HTMLに非常によく似た構文のJavaScript**です。
 ReactはDOMの表現をするライブラリなので、プログラムでDOMを宣言することが多いのですが、普通に書くと以下のようになります。
 
 ```js
-var div = React.DOM.div(null, 'hello');
+const element = React.createElement('div', null, 'hello');
 ```
 
 一方JSXで書くと、同じものが以下のように書けます。
 
 ```js
-var div = <div>hello</div>;
+const element = <div>hello</div>;
 ```
 
 実際は複雑なDOMを構築することがほとんどなので、JSXを使わずにReactを使うのは難しいです。
 
 ```js
-var dom = (
+const dom = (
     <div>
         <h1 className="heading">見出し</h1> // JavaScriptの予約語は別の名前になっている（class -> className）
         <p>本文</p>

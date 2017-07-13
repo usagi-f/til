@@ -90,29 +90,30 @@ const handleFoo = () => {
 
 ...
 
-<button onclick={handleFoo} />
+<button onClick={handleFoo} />
 ```
 ↓
 ```js
-const handleFoo = () => {
-    // イベント
-};
-const handleBar = () => { // 普通に新しい関数をつくる
+const eventBar = () => { // 普通に新しい関数をつくる
     // イベント
 };
 
-const check = () => {
+const eventBaz = () => {
+    // イベント
+};
+
+const handleFoo = () => {
     // 普通にif文などを使って分岐をする
     if (true) {
-        return handleFoo;
+        return eventBar;
     } else {
-        return handleBar;
+        return eventBaz;
     }
-}
+};
 
 ...
 
-<button onclick={check} />
+<button onClick={handleFoo} />
 ```
 
 ### 組み合わせて使う
@@ -132,14 +133,14 @@ const animals = () => {
     } else {
         return <ComponentNeko />;
     }
-}
+};
 
 ...
 
 return (
     <div>
         <h1>動物</h1>
-        {animals} // 差分のある部分だけを分岐にかける
+        {animals()} // 差分のある部分だけを分岐にかける
     </div>
 );
 ```
@@ -149,36 +150,28 @@ return (
 jQueryではプラグインが隆盛し、簡単にリッチなUIを組み込めるようになりました。
 Reactでは以下のような方法で、拡張ができます。
 
-### アドオン
+### 公式ライブラリ
 
-React本体は最低限の実装しかしていないため、それ以上の実装を行いたい場合は公式から提供されているアドオンを追加読み込みすることで、使用が可能になります。
+Reactのコアプログラムは最低限必要な機能だけを保持しています。
+
+そのため、別ライブラリとして提供されているものを追加で読み込んで使用するのが一般的です。
 
 ```js
-// CSSアニメーションのアドオンを読み込み
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
-...
-
-return (
-    <div>
-        <button onClick={this.handleAdd}>Add Item</button>
-        <ReactCSSTransitionGroup // コンポーネントという形で提供されている
-            transitionName="example"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={300}>
-            {items}
-        </ReactCSSTransitionGroup>
-    </div>
+// ReactコンポーネントをDOMとして描画する
+import ReactDOM from 'react-dom';
+ReactDOM.render(
+    <h1>Hello, world!</h1>,
+    document.getElementById('root')
 );
-```
 
-```js
-// Reactコンポーネントのテスト用ユーティリティを読み込み
-import ReactTestUtils from 'react-addons-test-utils';
-
-// 各種メソッドが使用可能になる
-const renderer = ReactTestUtils.createRenderer();
+// Reactコンポーネントをテスト用に薄くレンダリングする
+import ShallowRenderer from 'react-test-renderer/shallow';
+const renderer = new ShallowRenderer();
 renderer.render(<MyComponent />);
+
+// テスト用ユーティリティを使ってイベントを発火させる
+import ReactTestUtils from 'react-dom/test-utils';
+ReactTestUtils.Simulate.change(node);
 ```
 
 ### プラグインコンポーネント
@@ -190,7 +183,7 @@ jQueryプラグインのように、第三者が作成したプログラムを�
 
 ```js
 // 読み込んで
-import FooComponentPlugin = 'foo-component-plugin';
+import FooComponentPlugin from 'foo-component-plugin';
 
 ...
 
@@ -201,7 +194,7 @@ return (
 ```
 
 ```js
-import FooComponentPlugin = 'foo-component-plugin';
+import FooComponentPlugin from 'foo-component-plugin';
 
 // プラグインなので、オプションも設定可能
 const options = {

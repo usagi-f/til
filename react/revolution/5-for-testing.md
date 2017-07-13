@@ -35,10 +35,10 @@ describe('テスト', () => {
 ### とりあえずこれだけ書ければテストを始めれる！
 
 ```js
-import assert from 'power-assert';
 import React from 'react';
-import {shallow} from 'enzyme';
-import Component from './component';
+import assert from 'power-assert';
+import { shallow } from 'enzyme';
+import Component from './';
 
 it('テスト', () => {
 
@@ -52,7 +52,7 @@ it('テスト', () => {
     const component = shallow(<Component {...props} />);
 
     // power-assertで何かしらのテストコードを書く
-    assert.equal();
+    assert.equal(...);
 });
 ```
 
@@ -73,7 +73,7 @@ assert.equal(component.find('.name-box').length, 3);
 
 #### イベントの発火テスト
 
-`onclick`などに指定しているイベントが正しく発火しているかをチェックします。
+`onClick`などに指定しているイベントが正しく発火しているかをチェックします。
 
 ```js
 import sinon from 'sinon'; // sinonを使います

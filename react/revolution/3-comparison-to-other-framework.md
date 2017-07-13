@@ -72,6 +72,12 @@ Reactはあくまでも**Viewを構築するためのライブラリ**です。
 
 オススメはしない。
 
+### 各プロジェクトの方針の違い
+
+それぞれがコアになる企業やコミュニティによって継続的な開発がされています。そこにはどのようなフレームワーク・ライブラリにしていきたいかという思想が反映されています。
+
+例えばAngularはSPA(シングル・ページ・アプリケーション)や、PWA（プログレッシヴ・ウェブ・アプリケーション）といったハイパフォーマンスなWebアプリケーションを実現する方向になっていますし、Reactは根本的なロジックをWeb（正確にはDOM）以外にもネイティブアプリやVRアプリへ展開していく構想があります。
+
 ---
 
 ＜ [2-how-to-use](https://github.com/usagi-f/til/blob/master/react/revolution/2-how-to-use.md)｜[4-for-redux](https://github.com/usagi-f/til/blob/master/react/revolution/4-for-redux.md) ＞
