@@ -1,4 +1,4 @@
-const articles = [];
+let articles = [];
 
 module.exports = (express) => {
 
@@ -25,6 +25,17 @@ module.exports = (express) => {
         .delete((req, res) => {
             
         });
+
+    router.get('/new', (req, res) => {
+        res.send(`
+<form method="post" action="/articles">
+    <input type="text" placeholder="title" name="title">
+    <input type="text" placeholder="author" name="author">
+    <textarea placeholder="body" name="body"></textarea>
+    <button type="submit">Submit</button>
+</form>
+        `)
+    });
 
     return router;
 }
