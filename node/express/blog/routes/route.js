@@ -6,27 +6,25 @@ module.exports = (express) => {
 
     // CRUD create:post(), read:get(), update:put(), delete:delete()
 
-    router.get('/articles', (req, res) => {
-        res.json(articles);
-    });
+    router.route('/articles')
+        .get((req, res) => {
+            res.json(articles);
+        })
+        .post((req, res) => {
+            articles.push(req.body);
+            res.redirect('/articles');
+        });
 
-    router.post('/articles', (req, res) => {
-        articles.push(req.body);
-        res.redirect('/articles');
-    });
+    router.route('/articles/:id')
+        .get((req, res) => {
 
-    router.get('/articles/:id', (req, res) => {
-
-    });
-
-    router.put('/articles/:id', (req, res) => {
-        
-    });
-
-
-    router.delete('/articles/:id', (req, res) => {
-        
-    });
+        })
+        .put((req, res) => {
+            
+        })
+        .delete((req, res) => {
+            
+        });
 
     return router;
 }
